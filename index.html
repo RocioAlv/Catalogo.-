@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,13 +7,13 @@
     <style>
         /* Estilo monocromático en azules con fondo negro */
         :root {
-            --azul-oscuro: #001F3F; /* Azul marino para fondos y títulos */
-            --azul-principal: #0074D9; /* Azul medio para acentos */
-            --azul-neon: #00FFFF; /* Azul neon para botones y sombras */
-            --azul-claro: #7FDBFF; /* Azul claro para fondos secundarios */
-            --azul-muy-claro: #E3F2FD; /* Usado en detalles */
-            --texto-claro: #FFFFFF; /* Texto blanco para fondo negro */
-            --texto-azul: #B0C4DE; /* Texto gris-azulado para descripciones en fondos oscuros */
+            --azul-oscuro: #001F3F;
+            --azul-principal: #0074D9;
+            --azul-neon: #00FFFF;
+            --azul-claro: #7FDBFF;
+            --azul-muy-claro: #E3F2FD;
+            --texto-claro: #FFFFFF;
+            --texto-azul: #B0C4DE;
             --blanco: #FFFFFF;
             --negro: #000000;
         }
@@ -27,10 +26,58 @@
             color: var(--texto-claro);
             line-height: 1.6;
         }
+
+        /* 🔹 Menú superior */
+        nav {
+            background-color: rgba(0, 31, 63, 0.9);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+            backdrop-filter: blur(6px);
+        }
+
+        nav .logo {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: var(--azul-neon);
+            text-shadow: 0 0 10px var(--azul-neon);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--blanco);
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--azul-neon);
+            text-shadow: 0 0 10px var(--azul-neon);
+        }
+
+        /* Espacio para que el contenido no quede detrás del menú */
+        header {
+            height: 70px;
+        }
         
         /* Portada Principal Hero */
         .hero {
-            background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80'); /* Imagen de PC */
+            background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');
             background-size: cover;
             background-position: center;
             height: 60vh;
@@ -50,7 +97,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 31, 63, 0.7); /* Overlay azul oscuro */
+            background-color: rgba(0, 31, 63, 0.7);
         }
         
         .hero-content {
@@ -78,6 +125,7 @@
             max-width: 1200px; 
             margin: 40px auto; 
             padding: 0 20px; 
+            box-sizing: border-box;
         }
         
         .intro {
@@ -99,6 +147,7 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 40px;
+            box-sizing: border-box;
         }
         
         .curso-card {
@@ -106,17 +155,18 @@
             border-radius: 10px;
             padding: 25px;
             box-shadow: 
-                0 4px 8px rgba(0, 0, 0, 0.1), /* Sombra básica */
-                0 0 20px rgba(0, 255, 255, 0.3); /* Sombra neon 3D con azul neon */
+                0 4px 8px rgba(0, 0, 0, 0.1),
+                0 0 20px rgba(0, 255, 255, 0.3);
             transition: all 0.3s ease;
-            color: var(--negro); /* Texto general negro en cards blancas */
+            color: var(--negro);
+            box-sizing: border-box;
         }
         
         .curso-card:hover {
             transform: translateY(-5px);
             box-shadow: 
-                0 8px 16px rgba(0, 0, 0, 0.2), /* Sombra básica intensificada */
-                0 0 30px rgba(0, 255, 255, 0.5); /* Neon glow más fuerte para 3D */
+                0 8px 16px rgba(0, 0, 0, 0.2),
+                0 0 30px rgba(0, 255, 255, 0.5);
         }
         
         .curso-card h2 { 
@@ -130,7 +180,7 @@
         .curso-card p { 
             font-size: 1.1em; 
             margin: 0 0 20px 0; 
-            color: var(--negro); /* Descripciones en NEGRO como pediste */
+            color: var(--negro);
         }
         
         .detalles-curso {
@@ -142,7 +192,6 @@
             color: var(--azul-principal);
         }
         
-        /* Botón azul neon (ahora link a nueva página) */
         .btn-inscribir {
             background-color: var(--azul-neon);
             color: var(--negro);
@@ -154,10 +203,11 @@
             width: 100%;
             font-weight: bold;
             transition: all 0.3s ease;
-            box-shadow: 0 0 10px var(--azul-neon); /* Efecto glow neon */
+            box-shadow: 0 0 10px var(--azul-neon);
             text-decoration: none;
             display: block;
             text-align: center;
+            box-sizing: border-box;
         }
         
         .btn-inscribir:hover {
@@ -175,14 +225,58 @@
         }
         
         /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2em; }
-            .hero p { font-size: 1.2em; }
-            .cursos-grid { grid-template-columns: 1fr; gap: 20px; }
+        @media (max-width: 800px) {
+            nav ul {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: rgba(0,31,63,0.95);
+                width: 100%;
+                display: none;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+                cursor: pointer;
+                font-size: 1.5em;
+                color: var(--blanco);
+            }
+
+            nav ul li {
+                text-align: center;
+                padding: 10px 0;
+            }
         }
+
+        @media (min-width: 801px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+
     </style>
 </head>
 <body>
+
+    <!-- 🔹 Menú superior -->
+    <nav>
+        <div class="logo">Academia</div>
+        <span class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('show')">☰</span>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#cursos">Cursos</a></li>
+            <li><a href="#talleres">Talleres</a></li>
+            <li><a href="contacto.html" target="_blank">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <header id="inicio"></header>
+
     <!-- Portada Principal -->
     <section class="hero">
         <div class="hero-content">
@@ -192,43 +286,40 @@
     </section>
     
     <main>
-        <div class="intro">
+        <div class="intro" id="cursos">
             <h2>Nuestros Cursos y Talleres</h2>
             <p>Explorá opciones diseñadas para tu desarrollo profesional. Inscribite y avanzá sin límites.</p>
         </div>
         
-        <div class="cursos-grid">
-            <!-- Curso 1: Marketing -->
+        <div class="cursos-grid" id="talleres">
+            <!-- Cursos y talleres -->
             <div class="curso-card">
                 <h2>Marketing Digital</h2>
                 <div class="detalles-curso">
                     Nivel: Intermedio | Duración: 6 semanas
                 </div>
-                <p>Aprendé estrategias de marketing online, redes sociales, SEO y campañas publicitarias. Ideal para emprendedores que quieren potenciar su presencia digital con herramientas prácticas y casos reales.</p>
+                <p>Aprendé estrategias de marketing online, redes sociales, SEO y campañas publicitarias. Ideal para emprendedores que quieren potenciar su presencia digital.</p>
                 <a href="contacto.html" target="_blank" class="btn-inscribir">Inscribirme Ahora</a>
             </div>
             
-            <!-- Curso 2: Canva -->
             <div class="curso-card">
                 <h2>Diseño con Canva</h2>
                 <div class="detalles-curso">
                     Nivel: Principiante | Duración: 4 semanas
                 </div>
-                <p>Domina Canva para crear gráficos, posts y materiales visuales profesionales. Cubrimos plantillas, edición y tips para redes. Perfecto para quienes buscan diseñar sin software complejo.</p>
+                <p>Domina Canva para crear gráficos, posts y materiales visuales profesionales. Perfecto para quienes buscan diseñar sin software complejo.</p>
                 <a href="contacto.html" target="_blank" class="btn-inscribir">Inscribirme Ahora</a>
             </div>
             
-            <!-- Curso 3: Oratoria -->
             <div class="curso-card">
                 <h2>Oratoria y Comunicación</h2>
                 <div class="detalles-curso">
                     Nivel: Todos los niveles | Duración: 8 semanas
                 </div>
-                <p>Mejorá tu habilidad para hablar en público, presentaciones y discursos impactantes. Incluye ejercicios prácticos, feedback y técnicas para superar el miedo escénico.</p>
+                <p>Mejorá tu habilidad para hablar en público, presentaciones y discursos impactantes. Incluye ejercicios prácticos y feedback profesional.</p>
                 <a href="contacto.html" target="_blank" class="btn-inscribir">Inscribirme Ahora</a>
             </div>
             
-            <!-- Taller 1: Creación de CV -->
             <div class="curso-card">
                 <h2>Taller: Creación de CV</h2>
                 <div class="detalles-curso">
@@ -238,7 +329,6 @@
                 <a href="contacto.html" target="_blank" class="btn-inscribir">Inscribirme Ahora</a>
             </div>
             
-            <!-- Taller 2: Entrevistas Laborales -->
             <div class="curso-card">
                 <h2>Taller: Entrevistas Laborales</h2>
                 <div class="detalles-curso">
@@ -248,13 +338,12 @@
                 <a href="contacto.html" target="_blank" class="btn-inscribir">Inscribirme Ahora</a>
             </div>
             
-            <!-- Taller 3: Assessment Center -->
             <div class="curso-card">
                 <h2>Taller: Assessment Center</h2>
                 <div class="detalles-curso">
                     Nivel: Avanzado | Duración: 4 sesiones
                 </div>
-                <p>Domina dinámicas grupales, tests y evaluaciones en assessment centers. Estrategias para RRHH y competencias clave en procesos selectivos corporativos.</p>
+                <p>Domina dinámicas grupales, tests y evaluaciones en assessment centers. Estrategias para RRHH y competencias clave en procesos corporativos.</p>
                 <a href="contacto.html" target="_blank" class="btn-inscribir">Inscribirme Ahora</a>
             </div>
         </div>
@@ -263,5 +352,6 @@
     <footer>
         <p>&copy; 2023 Academia de Conocimiento. Todos los derechos reservados.</p>
     </footer>
+
 </body>
 </html>
