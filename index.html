@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,7 +26,6 @@
             background-color: var(--negro);
             color: var(--texto-claro);
             line-height: 1.6;
-            scroll-behavior: smooth; /* Scroll suave al clickear enlaces internos (como #contacto) */
         }
         
         /* Portada Principal Hero */
@@ -142,7 +142,7 @@
             color: var(--azul-principal);
         }
         
-        /* Botón azul neon (ahora es un <a> para scroll) */
+        /* Botón azul neon (ahora link a nueva página) */
         .btn-inscribir {
             background-color: var(--azul-neon);
             color: var(--negro);
@@ -166,42 +166,6 @@
             transform: scale(1.05);
         }
         
-        /* Sección de Contacto (al final de la página) */
-        .seccion-contacto {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
-            text-align: center;
-            background-color: var(--azul-oscuro);
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); /* Neon glow */
-        }
-        
-        .seccion-contacto h2 {
-            color: var(--azul-claro);
-            font-size: 2.5em;
-            margin-bottom: 30px;
-        }
-        
-        .contacto-item {
-            display: block;
-            margin: 20px 0;
-            font-size: 1.5em;
-            color: var(--blanco);
-            text-decoration: none;
-            padding: 15px;
-            border-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
-            transition: all 0.3s ease;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
-        }
-        
-        .contacto-item:hover {
-            background-color: var(--azul-neon);
-            transform: scale(1.05);
-            box-shadow: 0 0 20px var(--azul-neon);
-        }
-        
         footer { 
             background-color: var(--azul-oscuro); 
             color: var(--azul-claro); 
@@ -215,8 +179,6 @@
             .hero h1 { font-size: 2em; }
             .hero p { font-size: 1.2em; }
             .cursos-grid { grid-template-columns: 1fr; gap: 20px; }
-            .seccion-contacto h2 { font-size: 2em; }
-            .contacto-item { font-size: 1.2em; padding: 10px; }
         }
     </style>
 </head>
@@ -243,7 +205,7 @@
                     Nivel: Intermedio | Duración: 6 semanas
                 </div>
                 <p>Aprendé estrategias de marketing online, redes sociales, SEO y campañas publicitarias. Ideal para emprendedores que quieren potenciar su presencia digital con herramientas prácticas y casos reales.</p>
-                <a href="#contacto" class="btn-inscribir">Inscribirme Ahora</a>
+                <a href="contacto.html" target="_blank" class="btn-inscribir">Inscribirme Ahora</a>
             </div>
             
             <!-- Curso 2: Canva -->
@@ -253,7 +215,7 @@
                     Nivel: Principiante | Duración: 4 semanas
                 </div>
                 <p>Domina Canva para crear gráficos, posts y materiales visuales profesionales. Cubrimos plantillas, edición y tips para redes. Perfecto para quienes buscan diseñar sin software complejo.</p>
-                <a href="#contacto" class="btn-inscribir">Inscribirme Ahora</a>
+                <a href="contacto.html" target="_blank" class="btn-inscribir">Inscribirme Ahora</a>
             </div>
             
             <!-- Curso 3: Oratoria -->
@@ -263,7 +225,7 @@
                     Nivel: Todos los niveles | Duración: 8 semanas
                 </div>
                 <p>Mejorá tu habilidad para hablar en público, presentaciones y discursos impactantes. Incluye ejercicios prácticos, feedback y técnicas para superar el miedo escénico.</p>
-                <a href="#contacto" class="btn-inscribir">Inscribirme Ahora</a>
+                <a href="contacto.html" target="_blank" class="btn-inscribir">Inscribirme Ahora</a>
             </div>
             
             <!-- Taller 1: Creación de CV -->
@@ -273,7 +235,7 @@
                     Nivel: Principiante | Duración: 2 sesiones
                 </div>
                 <p>Aprendé a armar un CV atractivo y adaptado a tu perfil. Cubrimos formatos, palabras clave y errores comunes para destacar en procesos de selección.</p>
-                <a href="#contacto" class="btn-inscribir">Inscribirme Ahora</a>
+                <a href="contacto.html" target="_blank" class="btn-inscribir">Inscribirme Ahora</a>
             </div>
             
             <!-- Taller 2: Entrevistas Laborales -->
@@ -283,7 +245,7 @@
                     Nivel: Intermedio | Duración: 3 sesiones
                 </div>
                 <p>Preparate para entrevistas exitosas: respuestas STAR, lenguaje corporal y manejo de preguntas difíciles. Simulaciones reales para ganar confianza.</p>
-                <a href="#contacto" class="btn-inscribir">Inscribirme Ahora</a>
+                <a href="contacto.html" target="_blank" class="btn-inscribir">Inscribirme Ahora</a>
             </div>
             
             <!-- Taller 3: Assessment Center -->
@@ -293,36 +255,13 @@
                     Nivel: Avanzado | Duración: 4 sesiones
                 </div>
                 <p>Domina dinámicas grupales, tests y evaluaciones en assessment centers. Estrategias para RRHH y competencias clave en procesos selectivos corporativos.</p>
-                <a href="#contacto" class="btn-inscribir">Inscribirme Ahora</a>
+                <a href="contacto.html" target="_blank" class="btn-inscribir">Inscribirme Ahora</a>
             </div>
         </div>
     </main>
     
-    <!-- Nueva Sección de Contacto (al final, como "pestaña" o slide) -->
-    <section id="contacto" class="seccion-contacto">
-        <h2>CONTACTANOS:</h2>
-        <a href="https://wa.me/543364326790?text=Hola%20Roc%C3%ADo,%20me%20interesa%20inscribirme%20a%20un%20curso%20de%20la%20Academia%20de%20Conocimiento.%20%C2%A1Gracias!" class="contacto-item">📱 3364 326790 (WhatsApp)</a>
-        <a href="mailto:rocioalvarezrrhh@gmail.com?subject=Inscripci%C3%B3n%20a%20Curso%20-%20Academia%20de%20Conocimiento&body=Hola%20Roc%C3%ADo,%20me%20interesa%20inscribirme%20a%20un%20curso.%20Por%20favor,%20contactame%20para%20más%20detalles.%20Saludos!" class="contacto-item">📧 rocioalvarezrrhh@gmail.com</a>
-    </section>
-    
     <footer>
         <p>&copy; 2023 Academia de Conocimiento. Todos los derechos reservados.</p>
     </footer>
-    
-    <script>
-        // JS opcional para scroll suave en navegadores viejos (si CSS no funciona)
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
