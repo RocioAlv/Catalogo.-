@@ -93,17 +93,6 @@
             color: var(--texto-azul);
         }
         
-        /* Lista de cursos (visible por defecto) */
-        .cursos-lista {
-            display: block;
-        }
-        
-        /* Secciones de cursos individuales (ocultas por defecto) */
-        .seccion-curso {
-            display: none;
-            padding: 20px 0;
-        }
-        
         .cursos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -173,112 +162,6 @@
             transform: scale(1.05);
         }
         
-        .btn-volver {
-            background-color: var(--azul-principal);
-            color: var(--blanco);
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            margin: 20px 0;
-            display: inline-block;
-            transition: background-color 0.3s ease;
-        }
-        
-        .btn-volver:hover {
-            background-color: var(--azul-oscuro);
-        }
-        
-        /* Estilo para portadas de cursos individuales */
-        .hero-curso {
-            background-size: cover;
-            background-position: center;
-            height: 50vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--blanco);
-            position: relative;
-            border-radius: 10px;
-            margin-bottom: 30px;
-        }
-        
-        .hero-curso::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6); /* Overlay negro para legibilidad */
-        }
-        
-        .hero-curso-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            padding: 0 20px;
-        }
-        
-        .hero-curso h2 { 
-            font-size: 2.5em; 
-            margin: 0 0 10px 0; 
-            color: var(--azul-neon); 
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-        }
-        
-        .hero-curso p { 
-            font-size: 1.3em; 
-            margin: 0; 
-            color: var(--blanco); 
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-        }
-        
-        .detalles-curso-seccion {
-            background-color: rgba(255,255,255,0.1);
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            font-weight: bold;
-            color: var(--azul-claro);
-            text-align: center;
-        }
-        
-        .descripcion-seccion {
-            font-size: 1.2em;
-            color: var(--texto-azul); /* Gris-azulado para legibilidad sobre negro */
-            margin-bottom: 30px;
-            text-align: center;
-            max-width: 800px;
-        }
-        
-        .detalles-contacto {
-            text-align: center;
-            margin: 30px 0;
-        }
-        
-        .opcion-contacto {
-            display: inline-block;
-            margin: 15px;
-            padding: 15px 25px;
-            background-color: rgba(255,255,255,0.1);
-            border: 2px solid var(--azul-neon);
-            border-radius: 5px;
-            text-decoration: none;
-            color: var(--texto-claro);
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        
-        .opcion-contacto:hover {
-            background-color: var(--azul-neon);
-            color: var(--negro);
-            box-shadow: 0 0 10px var(--azul-neon);
-        }
-        
         footer { 
             background-color: var(--azul-oscuro); 
             color: var(--azul-claro); 
@@ -291,10 +174,7 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 2em; }
             .hero p { font-size: 1.2em; }
-            .hero-curso h2 { font-size: 2em; }
-            .hero-curso { height: 40vh; }
             .cursos-grid { grid-template-columns: 1fr; gap: 20px; }
-            .opcion-contacto { display: block; margin: 10px auto; width: 80%; }
         }
     </style>
 </head>
@@ -308,87 +188,83 @@
     </section>
     
     <main>
-        <!-- Lista de Cursos (visible por defecto) -->
-        <div id="cursos-lista" class="cursos-lista">
-            <div class="intro">
-                <h2>Nuestros Cursos y Talleres</h2>
-                <p>Explorá opciones diseñadas para tu desarrollo profesional. Inscribite y avanzá sin límites.</p>
+        <div class="intro">
+            <h2>Nuestros Cursos y Talleres</h2>
+            <p>Explorá opciones diseñadas para tu desarrollo profesional. Inscribite y avanzá sin límites.</p>
+        </div>
+        
+        <div class="cursos-grid">
+            <!-- Curso 1: Marketing -->
+            <div class="curso-card">
+                <h2>Marketing Digital</h2>
+                <div class="detalles-curso">
+                    Nivel: Intermedio | Duración: 6 semanas
+                </div>
+                <p>Aprendé estrategias de marketing online, redes sociales, SEO y campañas publicitarias. Ideal para emprendedores que quieren potenciar su presencia digital con herramientas prácticas y casos reales.</p>
+                <button class="btn-inscribir" onclick="mostrarContactos()">Inscribirme Ahora</button>
             </div>
             
-            <div class="cursos-grid">
-                <!-- Curso 1: Marketing -->
-                <div class="curso-card">
-                    <h2>Marketing Digital</h2>
-                    <div class="detalles-curso">
-                        Nivel: Intermedio | Duración: 6 semanas
-                    </div>
-                    <p>Aprendé estrategias de marketing online, redes sociales, SEO y campañas publicitarias. Ideal para emprendedores que quieren potenciar su presencia digital con herramientas prácticas y casos reales.</p>
-                    <button class="btn-inscribir" onclick="mostrarCurso('marketing')">Inscribirme Ahora</button>
+            <!-- Curso 2: Canva -->
+            <div class="curso-card">
+                <h2>Diseño con Canva</h2>
+                <div class="detalles-curso">
+                    Nivel: Principiante | Duración: 4 semanas
                 </div>
-                
-                <!-- Curso 2: Canva -->
-                <div class="curso-card">
-                    <h2>Diseño con Canva</h2>
-                    <div class="detalles-curso">
-                        Nivel: Principiante | Duración: 4 semanas
-                    </div>
-                    <p>Domina Canva para crear gráficos, posts y materiales visuales profesionales. Cubrimos plantillas, edición y tips para redes. Perfecto para quienes buscan diseñar sin software complejo.</p>
-                    <button class="btn-inscribir" onclick="mostrarCurso('canva')">Inscribirme Ahora</button>
+                <p>Domina Canva para crear gráficos, posts y materiales visuales profesionales. Cubrimos plantillas, edición y tips para redes. Perfecto para quienes buscan diseñar sin software complejo.</p>
+                <button class="btn-inscribir" onclick="mostrarContactos()">Inscribirme Ahora</button>
+            </div>
+            
+            <!-- Curso 3: Oratoria -->
+            <div class="curso-card">
+                <h2>Oratoria y Comunicación</h2>
+                <div class="detalles-curso">
+                    Nivel: Todos los niveles | Duración: 8 semanas
                 </div>
-                
-                <!-- Curso 3: Oratoria -->
-                <div class="curso-card">
-                    <h2>Oratoria y Comunicación</h2>
-                    <div class="detalles-curso">
-                        Nivel: Todos los niveles | Duración: 8 semanas
-                    </div>
-                    <p>Mejorá tu habilidad para hablar en público, presentaciones y discursos impactantes. Incluye ejercicios prácticos, feedback y técnicas para superar el miedo escénico.</p>
-                    <button class="btn-inscribir" onclick="mostrarCurso('oratoria')">Inscribirme Ahora</button>
+                <p>Mejorá tu habilidad para hablar en público, presentaciones y discursos impactantes. Incluye ejercicios prácticos, feedback y técnicas para superar el miedo escénico.</p>
+                <button class="btn-inscribir" onclick="mostrarContactos()">Inscribirme Ahora</button>
+            </div>
+            
+            <!-- Taller 1: Creación de CV -->
+            <div class="curso-card">
+                <h2>Taller: Creación de CV</h2>
+                <div class="detalles-curso">
+                    Nivel: Principiante | Duración: 2 sesiones
                 </div>
-                
-                <!-- Taller 1: Creación de CV -->
-                <div class="curso-card">
-                    <h2>Taller: Creación de CV</h2>
-                    <div class="detalles-curso">
-                        Nivel: Principiante | Duración: 2 sesiones
-                    </div>
-                    <p>Aprendé a armar un CV atractivo y adaptado a tu perfil. Cubrimos formatos, palabras clave y errores comunes para destacar en procesos de selección.</p>
-                    <button class="btn-inscribir" onclick="mostrarCurso('cv')">Inscribirme Ahora</button>
+                <p>Aprendé a armar un CV atractivo y adaptado a tu perfil. Cubrimos formatos, palabras clave y errores comunes para destacar en procesos de selección.</p>
+                <button class="btn-inscribir" onclick="mostrarContactos()">Inscribirme Ahora</button>
+            </div>
+            
+            <!-- Taller 2: Entrevistas Laborales -->
+            <div class="curso-card">
+                <h2>Taller: Entrevistas Laborales</h2>
+                <div class="detalles-curso">
+                    Nivel: Intermedio | Duración: 3 sesiones
                 </div>
-                
-                <!-- Taller 2: Entrevistas Laborales -->
-                <div class="curso-card">
-                    <h2>Taller: Entrevistas Laborales</h2>
-                    <div class="detalles-curso">
-                        Nivel: Intermedio | Duración: 3 sesiones
-                    </div>
-                    <p>Preparate para entrevistas exitosas: respuestas STAR, lenguaje corporal y manejo de preguntas difíciles. Simulaciones reales para ganar confianza.</p>
-                    <button class="btn-inscribir" onclick="mostrarCurso('entrevistas')">Inscribirme Ahora</button>
+                <p>Preparate para entrevistas exitosas: respuestas STAR, lenguaje corporal y manejo de preguntas difíciles. Simulaciones reales para ganar confianza.</p>
+                <button class="btn-inscribir" onclick="mostrarContactos()">Inscribirme Ahora</button>
+            </div>
+            
+            <!-- Taller 3: Assessment Center -->
+            <div class="curso-card">
+                <h2>Taller: Assessment Center</h2>
+                <div class="detalles-curso">
+                    Nivel: Avanzado | Duración: 4 sesiones
                 </div>
-                
-                <!-- Taller 3: Assessment Center -->
-                <div class="curso-card">
-                    <h2>Taller: Assessment Center</h2>
-                    <div class="detalles-curso">
-                        Nivel: Avanzado | Duración: 4 sesiones
-                    </div>
-                    <p>Domina dinámicas grupales, tests y evaluaciones en assessment centers. Estrategias para RRHH y competencias clave en procesos selectivos corporativos.</p>
-                    <button class="btn-inscribir" onclick="mostrarCurso('assessment')">Inscribirme Ahora</button>
-                </div>
+                <p>Domina dinámicas grupales, tests y evaluaciones en assessment centers. Estrategias para RRHH y competencias clave en procesos selectivos corporativos.</p>
+                <button class="btn-inscribir" onclick="mostrarContactos()">Inscribirme Ahora</button>
             </div>
         </div>
-                <!-- Sección para Marketing (con foto de portada) -->
-        <div id="seccion-marketing" class="seccion-curso">
-            <button class="btn-volver" onclick="volverCatalogo()">← Volver al Catálogo</button>
-            <section class="hero-curso" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');">
-                <div class="hero-curso-content">
-                    <h2>Marketing Digital</h2>
-                    <p>Potenciá tu negocio con estrategias digitales impactantes</p>
-                </div>
-            </section>
-            <div class="detalles-curso-seccion">
-                Nivel: Intermedio | Duración: 6 semanas
-            </div>
-            <div class="descripcion-seccion">
-                Aprendé estrategias de marketing online, redes sociales, SEO y campañas publicitarias. Ideal para emprendedores que quieren potenciar su presencia digital con herramientas prácticas y casos reales.
-            </div
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Academia de Conocimiento. Todos los derechos reservados.</p>
+    </footer>
+    
+    <script>
+        // Función para mostrar la ventana emergente con contactos
+        function mostrarContactos() {
+            alert("CONTACTANOS:\n\n📱 3364 326790\n\n📧 rocioalvarezrrhh@gmail.com");
+        }
+    </script>
+</body>
+</html>
