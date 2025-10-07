@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactanos - Academia de Conocimiento</title>
+    <style>
+        /* Mismo tema: Fondo negro, azules neon */
+        :root {
+            --azul-oscuro: #001F3F;
+            --azul-principal: #0074D9;
+            --azul-neon: #00FFFF;
+            --azul-claro: #7FDBFF;
+            --blanco: #FFFFFF;
+            --negro: #000000;
+        }
+        
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 40px 20px; 
+            background-color: var(--negro);
+            color: var(--blanco);
+            text-align: center;
+            line-height: 1.6;
+        }
+        
+        h1 { 
+            color: var(--azul-claro); 
+            font-size: 3em; 
+            margin-bottom: 50px;
+            text-shadow: 0 0 10px var(--azul-neon);
+        }
+        
+        .recuadros-container {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .recuadro {
+            background-color: rgba(0, 31, 63, 0.8); /* Fondo semi-transparente azul oscuro */
+            border: 2px solid var(--azul-neon); /* Borde neon */
+            border-radius: 15px;
+            padding: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); /* Glow neon */
+            text-decoration: none;
+            color: var(--blanco);
+            font-size: 1.5em;
+            display: block;
+        }
+        
+        .recuadro:hover {
+            background-color
