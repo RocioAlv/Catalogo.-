@@ -170,8 +170,88 @@
             margin-top: 60px;
         }
         
-        /* Responsive */
+        /* Estilos para la Modal (Ventana Emergente Slide) */
+        .modal {
+            display: none; /* Oculta por defecto */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 31, 63, 0.8); /* Fondo semi-transparente azul oscuro */
+            animation: fadeIn 0.3s ease; /* Animación de entrada */
+        }
+        
+        .modal-content {
+            background-color: var(--blanco);
+            margin: 10% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.5); /* Neon glow */
+            transform: translateY(100vh); /* Empieza abajo */
+            animation: slideUp 0.5s ease forwards; /* Desliza hacia arriba */
+            color: var(--negro);
+        }
+        
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal h2 {
+            color: var(--azul-oscuro);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .contacto-item {
+            display: block;
+            margin: 15px 0;
+            font-size: 1.2em;
+            color: var(--azul-principal);
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .contacto-item:hover {
+            background-color: var(--azul-muy-claro);
+        }
+        
+        .btn-cerrar {
+            background-color: var(--azul-neon);
+            color: var(--negro);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 20px;
+            box-shadow: 0 0 10px var(--azul-neon);
+        }
+        
+        .btn-cerrar:hover {
+            background-color: var(--azul-principal);
+        }
+        
+        /* Responsive para Modal */
         @media (max-width: 768px) {
+            .modal-content {
+                margin: 20% auto;
+                width: 95%;
+                padding: 20px;
+            }
             .hero h1 { font-size: 2em; }
             .hero p { font-size: 1.2em; }
             .cursos-grid { grid-template-columns: 1fr; gap: 20px; }
@@ -201,7 +281,7 @@
                     Nivel: Intermedio | Duración: 6 semanas
                 </div>
                 <p>Aprendé estrategias de marketing online, redes sociales, SEO y campañas publicitarias. Ideal para emprendedores que quieren potenciar su presencia digital con herramientas prácticas y casos reales.</p>
-                <button class="btn-inscribir" onclick="mostrarContactos()">Inscribirme Ahora</button>
+                <button class="btn-inscribir" onclick="abrirModal()">Inscribirme Ahora</button>
             </div>
             
             <!-- Curso 2: Canva -->
@@ -211,7 +291,7 @@
                     Nivel: Principiante | Duración: 4 semanas
                 </div>
                 <p>Domina Canva para crear gráficos, posts y materiales visuales profesionales. Cubrimos plantillas, edición y tips para redes. Perfecto para quienes buscan diseñar sin software complejo.</p>
-                <button class="btn-inscribir" onclick="mostrarContactos()">Inscribirme Ahora</button>
+                <button class="btn-inscribir" onclick="abrirModal()">Inscribirme Ahora</button>
             </div>
             
             <!-- Curso 3: Oratoria -->
@@ -221,7 +301,7 @@
                     Nivel: Todos los niveles | Duración: 8 semanas
                 </div>
                 <p>Mejorá tu habilidad para hablar en público, presentaciones y discursos impactantes. Incluye ejercicios prácticos, feedback y técnicas para superar el miedo escénico.</p>
-                <button class="btn-inscribir" onclick="mostrarContactos()">Inscribirme Ahora</button>
+                <button class="btn-inscribir" onclick="abrirModal()">Inscribirme Ahora</button>
             </div>
             
             <!-- Taller 1: Creación de CV -->
@@ -231,7 +311,7 @@
                     Nivel: Principiante | Duración: 2 sesiones
                 </div>
                 <p>Aprendé a armar un CV atractivo y adaptado a tu perfil. Cubrimos formatos, palabras clave y errores comunes para destacar en procesos de selección.</p>
-                <button class="btn-inscribir" onclick="mostrarContactos()">Inscribirme Ahora</button>
+                <button class="btn-inscribir" onclick="abrirModal()">Inscribirme Ahora</button>
             </div>
             
             <!-- Taller 2: Entrevistas Laborales -->
@@ -241,7 +321,7 @@
                     Nivel: Intermedio | Duración: 3 sesiones
                 </div>
                 <p>Preparate para entrevistas exitosas: respuestas STAR, lenguaje corporal y manejo de preguntas difíciles. Simulaciones reales para ganar confianza.</p>
-                <button class="btn-inscribir" onclick="mostrarContactos()">Inscribirme Ahora</button>
+                <button class="btn-inscribir" onclick="abrirModal()">Inscribirme Ahora</button>
             </div>
             
             <!-- Taller 3: Assessment Center -->
@@ -251,7 +331,7 @@
                     Nivel: Avanzado | Duración: 4 sesiones
                 </div>
                 <p>Domina dinámicas grupales, tests y evaluaciones en assessment centers. Estrategias para RRHH y competencias clave en procesos selectivos corporativos.</p>
-                <button class="btn-inscribir" onclick="mostrarContactos()">Inscribirme Ahora</button>
+                <button class="btn-inscribir" onclick="abrirModal()">Inscribirme Ahora</button>
             </div>
         </div>
     </main>
@@ -260,10 +340,33 @@
         <p>&copy; 2023 Academia de Conocimiento. Todos los derechos reservados.</p>
     </footer>
     
+    <!-- Modal (Ventana Emergente) -->
+    <div id="miModal" class="modal" onclick="cerrarModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <h2>CONTACTANOS:</h2>
+            <a href="tel:+543364326790" class="contacto-item">📱 3364 326790</a>
+            <a href="mailto:rocioalvarezrrhh@gmail.com?subject=Inscripción a Curso&body=Hola Rocío, me interesa inscribirme a un curso de la Academia de Conocimiento." class="contacto-item">📧 rocioalvarezrrhh@gmail.com</a>
+            <button class="btn-cerrar" onclick="cerrarModal()">Cerrar</button>
+        </div>
+    </div>
+    
     <script>
-        // Función para mostrar la ventana emergente con contactos
-        function mostrarContactos() {
-            alert("CONTACTANOS:\n\n📱 3364 326790\n\n📧 rocioalvarezrrhh@gmail.com");
+        // Función para abrir la modal (slide up)
+        function abrirModal() {
+            document.getElementById('miModal').style.display = 'block';
+        }
+        
+        // Función para cerrar la modal
+        function cerrarModal(event) {
+            document.getElementById('miModal').style.display = 'none';
+        }
+        
+        // Cerrar al clickear fuera de la modal (opcional)
+        window.onclick = function(event) {
+            const modal = document.getElementById('miModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
         }
     </script>
 </body>
