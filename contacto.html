@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -55,4 +56,56 @@
         }
         
         .recuadro:hover {
-            background-color
+            background-color: rgba(0, 116, 217, 0.9); /* Azul principal al hover */
+            border-color: var(--azul-claro);
+            box-shadow: 0 0 30px var(--azul-neon);
+            transform: scale(1.02);
+        }
+        
+        .recuadro-telefono {
+            background-color: rgba(0, 255, 255, 0.1); /* Toque cyan para teléfono */
+        }
+        
+        .recuadro-telefono:hover {
+            background-color: rgba(0, 255, 255, 0.3);
+        }
+        
+        .recuadro-email {
+            background-color: rgba(127, 219, 255, 0.1); /* Toque azul claro para email */
+        }
+        
+        .recuadro-email:hover {
+            background-color: rgba(127, 219, 255, 0.3);
+        }
+        
+        /* Responsive para móviles */
+        @media (max-width: 768px) {
+            body { padding: 20px 10px; }
+            h1 { font-size: 2em; }
+            .recuadro { font-size: 1.2em; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <h1>CONTACTANOS:</h1>
+    
+    <div class="recuadros-container">
+        <!-- Recuadro para Teléfono (WhatsApp) -->
+        <a href="https://wa.me/543364326790?text=Hola%20Roc%C3%ADo,%20me%20interesa%20inscribirme%20a%20un%20curso%20de%20la%20Academia%20de%20Conocimiento.%20%C2%A1Gracias!" 
+           class="recuadro recuadro-telefono">
+            📱 3364 326790
+        </a>
+        
+        <!-- Recuadro para Email -->
+        <a href="mailto:rocioalvarezrrhh@gmail.com?subject=Inscripci%C3%B3n%20a%20Curso%20-%20Academia%20de%20Conocimiento&body=Hola%20Roc%C3%ADo,%20me%20interesa%20inscribirme%20a%20un%20curso.%20Por%20favor,%20contactame%20para%20m%C3%A1s%20detalles.%20Saludos!" 
+           class="recuadro recuadro-email">
+            📧 rocioalvarezrrhh@gmail.com
+        </a>
+    </div>
+    
+    <!-- Botón opcional para volver a la página principal -->
+    <p style="margin-top: 40px; font-size: 1em; color: var(--texto-azul);">
+        <a href="index.html" style="color: var(--azul-neon); text-decoration: none;">← Volver al Catálogo de Cursos</a>
+    </p>
+</body>
+</html>
